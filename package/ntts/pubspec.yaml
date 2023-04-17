@@ -1,0 +1,17 @@
+name: ntts
+
+description: Neural Text To Speech dart cross platform support server side and client side without request internet data and work on cpu.
+version: 0.0.0
+repository: https://github.com/azkadev/azkadev.git
+issue_tracker: https://github.com/azkadev/azkadev.git
+homepage: https://youtube.com/@azkadev
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+# dependencies:
+#   path: ^1.8.0
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0

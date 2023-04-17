@@ -25,6 +25,17 @@ cd ntts_dart
 sudo apt-get install espeak-ng
 ```
 
+
+### Compile Library
+
+```bash
+cd native_lib
+mkdir -p build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake --build .
+```
+
 ### Install
 
 ```bash

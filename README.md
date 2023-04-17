@@ -57,6 +57,7 @@ import 'package:ntts_dart/ntts_dart.dart';
 
 ### Quickstart
 
+Sebelum di run pastikan kamu sudah mengcompile library dan menyiapkan model dahulu
 
 ```dart
 import 'dart:io';

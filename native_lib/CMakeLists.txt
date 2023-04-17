@@ -134,10 +134,10 @@ ${PCAUDIO_LIBRARIES})
 # )
 # endif (WIN32)
  
-# add_custom_command(
-#   TARGET ntts_shared POST_BUILD 
-#   COMMAND ${CMAKE_STRIP} --strip-debug --strip-unneeded "${ntts_shared_dir}/${prefix_shared_library}ntts${package_shared_extension}"
-# )
+add_custom_command(
+  TARGET ntts_shared POST_BUILD 
+  COMMAND ${CMAKE_STRIP} --strip-debug --strip-unneeded "${ntts_shared_dir}/${prefix_shared_library}ntts${package_shared_extension}"
+)
 
 # add_custom_command(
 #   TARGET ntts_exe POST_BUILD 

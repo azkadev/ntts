@@ -43,14 +43,11 @@ import 'package:ntts_dart/ntts_dart.dart';
 
 ```dart
 import 'dart:io';
-import 'dart:isolate';
-import 'package:galaxeus_lib/galaxeus_lib.dart';
-import 'package:ntts_dart/ntts_dart.dart';
-import 'package:play/play_dart.dart';
+import 'dart:isolate'; 
+import 'package:ntts_dart/ntts_dart.dart'; 
 
 void main(List<String> arguments) async {
-  Args args = Args(arguments);
-  String? text = args["--text"] ?? args["-t"];
+  Args args = Args(arguments); 
   File file = File("data.wav");
   Ntts lib = Ntts(
     pathLib: "libntts.so",
@@ -58,34 +55,14 @@ void main(List<String> arguments) async {
   var result = lib.request(
     data: {
       "@type": "createVoice",
-      "text": text ?? """ 
-      k
-""",
+      "text": "Hello World Text To Speech",
       "exec_path": Directory.current.path,
       "model_path": File("models/en-us-libritts-high.onnx").path,
       "output_file": file.path,
       "speaker_id": 10,
     },
   );
-  await Isolate.run(() async {
-    Play play = Play(
-      gui: false,
-    );
-    await play.open(medias: [file.path]);
-    play.player.streams.completed.listen(
-      (event) {
-        if (event) {
-          exit(0);
-        }
-      },
-      onDone: () {
-        exit(0);
-      },
-    );
-    while (true) {
-      await Future.delayed(Duration(microseconds: 1));
-    }
-  });
+  
 }
 ```
 

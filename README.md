@@ -8,8 +8,14 @@ Neural Text To Speech Library untuk menghasilkan suara realistis seperti natural
 
 
 
-### Refferensi
+### Development
 
+```bash
+git clone https://github.com/azkadev/ntts_dart.git
+cd ntts_dart
+```
+
+### Refferensi
 
 1. [Piper](https://github.com/rhasspy/piper)
 2. [Mimic Recording Studio](https://github.com/MycroftAI/mimic-recording-studio)

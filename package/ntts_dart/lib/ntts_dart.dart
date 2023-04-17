@@ -3,8 +3,7 @@ import 'dart:ffi';
 import 'dart:io';
 
 import 'package:ffi/ffi.dart';
-import 'package:ntts_dart/typedef/request.dart'; 
- 
+import 'package:ntts_dart/typedef/request.dart';
 
 class Ntts {
   String path_lib = "libntts.so";
@@ -32,7 +31,7 @@ class Ntts {
     }
   }
 
-  Map request({
+  Map invoke({
     required Map data,
     String? pathLib,
   }) {
@@ -40,7 +39,14 @@ class Ntts {
     Pointer<Utf8> request_result = library(pathLib: pathLib).lookupFunction<RequestNative, RequestDart>("request").call(data_native);
     malloc.free(data_native);
     Map result = (json.decode(request_result.toDartString()) as Map);
-    malloc.free(request_result); 
+    malloc.free(request_result);
     return result;
+  }
+
+  Map request({
+    required Map data,
+    String? pathLib,
+  }) {
+    return invoke(data: data, pathLib: pathLib);
   }
 }

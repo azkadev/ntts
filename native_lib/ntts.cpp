@@ -145,7 +145,8 @@ json invoke(json jsonBody)
     runConfig.speakerId = (piper::SpeakerId)stol(to_string(jsonBody["speaker_id"]));
     json jsonData;
 
-    jsonData["@type"] = "ok";
+    jsonData["@type"] = "voice"; 
+    jsonData["output_file"] = runConfig.output_file;
     // NOTE: This won't work for Windows (need GetModuleFileName)
     cout << runConfig.exec_path << endl;
     piper::initialize(runConfig.exec_path);
@@ -178,6 +179,7 @@ json invoke(json jsonBody)
          << " sec, audio=" << result.audioSeconds << " sec)" << endl;
 
     piper::terminate();
+
 
     return jsonData;
 }

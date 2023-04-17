@@ -1,0 +1,3 @@
+class NttsResponse {
+  NttsResponse();
+}

@@ -70,7 +70,7 @@ void main(List<String> arguments) async {
   Ntts lib = Ntts(
     pathLib: "libntts.so",
   );
-  var result = lib.request(
+  var result = lib.requestRaw(
     data: {
       "@type": "createVoice",
       "text": "Hello World Text To Speech",

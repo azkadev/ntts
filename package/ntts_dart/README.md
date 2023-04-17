@@ -12,6 +12,10 @@ https://user-images.githubusercontent.com/82513502/232475337-c02e24fd-52a7-4a4a-
 ---
 
 
+### Information
+
+Library ini sudah tidak akftif maintance jika anda butuh bantuan support / anda ingin melihat library terbaru anda bisa donasi seiklasnya ke akun Telegram [Azkadev](https://t.me/azkadev)
+
 ### Resources
 
 | No | Name                                                                                                            |

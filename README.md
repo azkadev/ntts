@@ -14,9 +14,9 @@ https://user-images.githubusercontent.com/82513502/232475337-c02e24fd-52a7-4a4a-
 
 ### Resources
 
-| No | Name |
-|----|------|
-| 1  |      |
+| No | Name                                                                                                            |
+|----|-----------------------------------------------------------------------------------------------------------------|
+| 1  | [MODEL TTS ENGLISH](https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-en-us-libritts-high.tar.gz) |
 
 
 ### Development

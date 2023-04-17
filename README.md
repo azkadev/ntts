@@ -9,7 +9,14 @@ Neural Text To Speech Library untuk menghasilkan suara realistis seperti natural
 
 https://user-images.githubusercontent.com/82513502/232475337-c02e24fd-52a7-4a4a-933c-b8f69aeedb5b.mp4
 
+---
 
+
+### Resources
+
+| No | Name |
+|----|------|
+| 1  |      |
 
 
 ### Development
@@ -24,7 +31,6 @@ cd ntts_dart
 ```bash
 sudo apt-get install espeak-ng
 ```
-
 
 ### Compile Library
 

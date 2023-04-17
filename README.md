@@ -31,6 +31,12 @@ sudo apt-get install espeak-ng
 dart pub add ntts_dart
 ```
 
+### Import Library
+
+```bash
+import 'package:ntts_dart/ntts_dart.dart';
+```
+
 ### Refferensi
 
 1. [Piper](https://github.com/rhasspy/piper)

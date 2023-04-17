@@ -37,6 +37,58 @@ dart pub add ntts_dart
 import 'package:ntts_dart/ntts_dart.dart';
 ```
 
+
+### Quickstart
+
+
+```dart
+import 'dart:io';
+import 'dart:isolate';
+import 'package:galaxeus_lib/galaxeus_lib.dart';
+import 'package:ntts_dart/ntts_dart.dart';
+import 'package:play/play_dart.dart';
+
+void main(List<String> arguments) async {
+  Args args = Args(arguments);
+  String? text = args["--text"] ?? args["-t"];
+  File file = File("data.wav");
+  Ntts lib = Ntts(
+    pathLib: "libntts.so",
+  );
+  var result = lib.request(
+    data: {
+      "@type": "createVoice",
+      "text": text ?? """ 
+      k
+""",
+      "exec_path": Directory.current.path,
+      "model_path": File("models/en-us-libritts-high.onnx").path,
+      "output_file": file.path,
+      "speaker_id": 10,
+    },
+  );
+  await Isolate.run(() async {
+    Play play = Play(
+      gui: false,
+    );
+    await play.open(medias: [file.path]);
+    play.player.streams.completed.listen(
+      (event) {
+        if (event) {
+          exit(0);
+        }
+      },
+      onDone: () {
+        exit(0);
+      },
+    );
+    while (true) {
+      await Future.delayed(Duration(microseconds: 1));
+    }
+  });
+}
+```
+
 ### Refferensi
 
 1. [Piper](https://github.com/rhasspy/piper)

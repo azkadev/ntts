@@ -56,6 +56,11 @@ class Ntts {
     required NttsRequest nttsRequest,
     String? pathLib,
   }) {
-    return NttsResponse();
+    return NttsResponse(
+      requestRaw(
+        data: nttsRequest.toJson(),
+        pathLib: pathLib,
+      ),
+    );
   }
 }

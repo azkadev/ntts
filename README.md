@@ -15,6 +15,18 @@ git clone https://github.com/azkadev/ntts_dart.git
 cd ntts_dart
 ```
 
+### Dependencies
+
+```bash
+sudo apt-get install espeak-ng
+```
+
+### Install
+
+```bash
+dart pub add ntts_dart
+```
+
 ### Refferensi
 
 1. [Piper](https://github.com/rhasspy/piper)

@@ -1,14 +1,46 @@
 name: example
-description: A sample command-line application.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+description: A new Flutter project.
+version: 0.0.0
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: '>=2.19.2 <3.0.0'
 
-# dependencies:
-#   path: ^1.8.0
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  galaxeus_lib: ^0.0.62
+  url_launcher: ^6.1.10
+  universal_io: ^2.2.0
+  galaxeus_lib_flutter: ^0.0.7
+  cool_alert: ^2.0.1
+  pinput: ^2.2.31
+  iconsax: ^0.0.8
 
 dev_dependencies:
-  lints: ^2.0.0
-  test: ^1.21.0
+  flutter_lints: ^2.0.0
+  packagex: ^0.0.25
+  msix: ^3.9.1
+
+flutter:
+  uses-material-design: true
+
+  assets:    
+    - assets/
+    - assets/icons/
+    - assets/user/
+    
+msix_config: 
+  display_name: example
+  install_certificate: false
+  
+packagex:
+  name: example
+  dart_target: example
+  flutter_target: main
+  dart_name: example
+  flutter_name: example
+  flutter_commands:
+    obfuscate: true
+    split-debug-info: 0.0.5
+  

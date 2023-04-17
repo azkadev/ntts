@@ -7,6 +7,10 @@ Neural Text To Speech Library untuk menghasilkan suara realistis seperti natural
 [![](https://raw.githubusercontent.com/azkadev/ntts_dart/main/.github/youtube_ntts.jpg)](https://youtu.be/IfOJs7OUH8o)
 
 
+https://user-images.githubusercontent.com/82513502/232475337-c02e24fd-52a7-4a4a-933c-b8f69aeedb5b.mp4
+
+
+
 
 ### Development
 

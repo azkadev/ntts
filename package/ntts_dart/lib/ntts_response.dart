@@ -128,5 +128,4 @@ class NttsResponse {
   String toString() {
     return json.encode(rawData);
   }
-
 }

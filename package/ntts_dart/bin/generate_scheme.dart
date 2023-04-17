@@ -8,16 +8,17 @@ void main(List<String> args) async {
     {
       "@type": "error",
       "message": "",
-      "description": "", 
-    }, 
+      "description": "",
+    },
     {
       "@type": "voice",
-      "output_file": "", 
-    }, 
+      "output_file": "",
+    },
     {
-      "@type": "ok", 
-    }, 
+      "@type": "ok",
+    },
   ];
 
-  jsonToScripts(scripts, directory: Directory(path.join(Directory.current.path, "lib", "scheme")));
+  jsonToScripts(scripts,
+      directory: Directory(path.join(Directory.current.path, "lib", "scheme")));
 }

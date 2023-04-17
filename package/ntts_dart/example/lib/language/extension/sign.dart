@@ -1,5 +1,3 @@
-
-
 import 'package:example/language/language.dart';
 
 extension LanguageAppSignExtension on LanguageApp {

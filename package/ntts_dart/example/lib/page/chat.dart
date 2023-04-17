@@ -16,7 +16,6 @@ import 'package:galaxeus_lib/galaxeus_lib.dart';
 
 class CustomSearchHintDelegate extends SearchDelegate<String> {
   CustomSearchHintDelegate({
-  
     super.searchFieldLabel,
     super.keyboardType,
     super.textInputAction,
@@ -27,7 +26,8 @@ class CustomSearchHintDelegate extends SearchDelegate<String> {
 
   @override
   PreferredSizeWidget buildBottom(BuildContext context) {
-    return const PreferredSize(preferredSize: Size.fromHeight(56.0), child: Text('bottom'));
+    return const PreferredSize(
+        preferredSize: Size.fromHeight(56.0), child: Text('bottom'));
   }
 
   @override
@@ -37,9 +37,7 @@ class CustomSearchHintDelegate extends SearchDelegate<String> {
   Widget buildResults(BuildContext context) => const Text('results');
 
   @override
-  List<Widget> buildActions(BuildContext context) => <Widget>[
-    Text("action")
-  ];
+  List<Widget> buildActions(BuildContext context) => <Widget>[Text("action")];
 }
 
 class ChatPage extends StatefulWidget {
@@ -117,7 +115,8 @@ class ChatPageState extends State<ChatPage> {
           content: MessageContent(
             type: MessageContentType.messageText,
             text: MessageText(
-              text: "Hallo Perkenalkan saya adalah robot apakah anda butuh bantuan?",
+              text:
+                  "Hallo Perkenalkan saya adalah robot apakah anda butuh bantuan?",
             ),
           ),
           reply_markup: ReplyMarkupData(
@@ -315,10 +314,10 @@ Version: v0.0.2-Dev""",
                           minWidth: 0,
                           onPressed: () async {
                             await showSearch(
-                              context: context,
-                              delegate: CustomSearchHintDelegate(searchFieldLabel: "sasas"),
-                              useRootNavigator: true
-                            );
+                                context: context,
+                                delegate: CustomSearchHintDelegate(
+                                    searchFieldLabel: "sasas"),
+                                useRootNavigator: true);
                           },
                           padding: const EdgeInsets.all(15),
                           child: const RotatedBox(
@@ -341,13 +340,15 @@ Version: v0.0.2-Dev""",
                                 child: Row(
                                   children: const [
                                     Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 5),
                                       child: Icon(
                                         Iconsax.call,
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 5),
                                       child: Text(
                                         "Video Call",
                                       ),
@@ -360,13 +361,15 @@ Version: v0.0.2-Dev""",
                                 child: Row(
                                   children: const [
                                     Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 5),
                                       child: Icon(
                                         Iconsax.call,
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 5),
                                       child: Text(
                                         "Video Call",
                                       ),
@@ -379,13 +382,15 @@ Version: v0.0.2-Dev""",
                                 child: Row(
                                   children: const [
                                     Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 5),
                                       child: Icon(
                                         Iconsax.call,
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 5),
                                       child: Text(
                                         "Video Call",
                                       ),
@@ -418,7 +423,10 @@ Version: v0.0.2-Dev""",
           color: Colors.white,
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: ImageFlutter.auto(image: "assets/user/girl_2.jpg", default_image: "assets/icons/ghost.png").image,
+            image: ImageFlutter.auto(
+                    image: "assets/user/girl_2.jpg",
+                    default_image: "assets/icons/ghost.png")
+                .image,
             onError: (errDetails, error) {},
           ),
         ),
@@ -474,7 +482,8 @@ Version: v0.0.2-Dev""",
                         //   },
                         // );
                       },
-                      onTapButton: (messageData, int index, int column, int row) {
+                      onTapButton:
+                          (messageData, int index, int column, int row) {
                         setState(
                           () {
                             messageDatas[index] = MessageData(
@@ -509,7 +518,9 @@ Version: v0.0.2-Dev""",
             Container(
               width: context.mediaQueryData.size.width,
               constraints: BoxConstraints(
-                maxHeight: (!isEmoji) ? context.mediaQueryData.size.height * .30 : context.mediaQueryData.size.height * .70,
+                maxHeight: (!isEmoji)
+                    ? context.mediaQueryData.size.height * .30
+                    : context.mediaQueryData.size.height * .70,
               ),
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -545,7 +556,9 @@ Version: v0.0.2-Dev""",
   }) {
     if (!isEmojiView) {
       return Row(
-        crossAxisAlignment: (textEditingController.text.split("\n").length < 2) ? CrossAxisAlignment.center : CrossAxisAlignment.end,
+        crossAxisAlignment: (textEditingController.text.split("\n").length < 2)
+            ? CrossAxisAlignment.center
+            : CrossAxisAlignment.end,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
@@ -707,7 +720,8 @@ Version: v0.0.2-Dev""",
                         content: MessageContent(
                           type: MessageContentType.messageText,
                           text: MessageText(
-                            text: "Hallo Perkenalkan saya adalah robot apakah anda butuh bantuan?",
+                            text:
+                                "Hallo Perkenalkan saya adalah robot apakah anda butuh bantuan?",
                           ),
                         ),
                         reply_markup: ReplyMarkupData(
@@ -730,7 +744,8 @@ Version: v0.0.2-Dev""",
                     duration: const Duration(milliseconds: 100),
                     curve: Curves.bounceInOut,
                   );
-                } else if (textEditingController.text.toLowerCase() == "/ping") {
+                } else if (textEditingController.text.toLowerCase() ==
+                    "/ping") {
                   textEditingController.clear();
                   await Future.delayed(const Duration(milliseconds: 500));
                   setState(() {
@@ -814,7 +829,8 @@ Version: v0.0.2-Dev""",
                         content: MessageContent(
                           type: MessageContentType.messageText,
                           text: MessageText(
-                            text: "Maaf saya tidak tahu kamu mengatakan apa bisakah anda mengajari saya?",
+                            text:
+                                "Maaf saya tidak tahu kamu mengatakan apa bisakah anda mengajari saya?",
                           ),
                         ),
                         reply_markup: ReplyMarkupData(
@@ -837,7 +853,9 @@ Version: v0.0.2-Dev""",
               },
               child: Icon(
                 Iconsax.send_1,
-                color: (textEditingController.text.isNotEmpty) ? Colors.blue : Colors.black,
+                color: (textEditingController.text.isNotEmpty)
+                    ? Colors.blue
+                    : Colors.black,
               ),
             ),
           ),
@@ -950,8 +968,10 @@ class ReplyMarkupData {
 class Message extends StatelessWidget {
   final List<MessageData> messageDatas;
   final ScrollController? controller;
-  final Function(MessageData messageData, int index, int column, int row)? onTapButton;
-  final Function(MessageData messageData, int index, String text, String type)? onTapText;
+  final Function(MessageData messageData, int index, int column, int row)?
+      onTapButton;
+  final Function(MessageData messageData, int index, String text, String type)?
+      onTapText;
   const Message({
     super.key,
     this.controller,
@@ -967,7 +987,8 @@ class Message extends StatelessWidget {
       scrollDirection: Axis.vertical,
       primary: false,
       shrinkWrap: true,
-      physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+      physics:
+          const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
       reverse: true,
       itemCount: messageDatas.length,
       itemBuilder: (BuildContext context, index) {
@@ -1004,7 +1025,8 @@ class Message extends StatelessWidget {
                 visible: () {
                   if (isContentNotification) {
                     return false;
-                  } else if (messageData.chat.type != "private" && messageData.chat.type != "channel") {
+                  } else if (messageData.chat.type != "private" &&
+                      messageData.chat.type != "channel") {
                     return !messageData.is_outgoing;
                   }
                   return false;
@@ -1026,7 +1048,8 @@ class Message extends StatelessWidget {
                   //   borderRadius = BorderRadius.circular(5);
                   // }
                   return MediaQuery(
-                    data: context.mediaQueryData.copyWith(size: constraints.biggest),
+                    data: context.mediaQueryData
+                        .copyWith(size: constraints.biggest),
                     child: Column(
                       crossAxisAlignment: () {
                         if (isContentNotification) {
@@ -1061,7 +1084,9 @@ class Message extends StatelessWidget {
                         ),
                         Visibility(
                           // visible: false,
-                          visible: (messageData.reply_markup != null && messageData.reply_markup!.inline_keyboard.isNotEmpty),
+                          visible: (messageData.reply_markup != null &&
+                              messageData
+                                  .reply_markup!.inline_keyboard.isNotEmpty),
                           child: Container(
                             constraints: BoxConstraints(
                               minWidth: context.mediaQueryData.size.width / 1.3,
@@ -1073,7 +1098,8 @@ class Message extends StatelessWidget {
                             ),
                             padding: const EdgeInsets.all(2),
                             child: InlineKeyboardButton(
-                              inLinKeyboardDatas: messageData.reply_markup!.inline_keyboard,
+                              inLinKeyboardDatas:
+                                  messageData.reply_markup!.inline_keyboard,
                               onTap: (column, row) async {
                                 if (onTapButton != null) {
                                   onTapButton!.call(
@@ -1091,15 +1117,20 @@ class Message extends StatelessWidget {
                                   useSafeArea: false,
                                   builder: (BuildContext context) {
                                     String typePageDownload = "main";
-                                    TextEditingController amountCash = TextEditingController();
+                                    TextEditingController amountCash =
+                                        TextEditingController();
                                     return AlertDialog(
                                       content: StatefulBuilder(
-                                        builder: (BuildContext context, StateSetter setState) {
+                                        builder: (BuildContext context,
+                                            StateSetter setState) {
                                           List<Widget> mainPage = [
                                             const Center(
                                               child: Text(
                                                 "Support Developer HexaMinate",
-                                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.w800),
                                               ),
                                             ),
                                             const SizedBox(
@@ -1114,22 +1145,33 @@ class Message extends StatelessWidget {
                                             const SizedBox(
                                               height: 15,
                                             ),
-                                            Builder(builder: (BuildContext ctx) {
-                                              Widget amount({required String amount, required String title}) {
+                                            Builder(
+                                                builder: (BuildContext ctx) {
+                                              Widget amount(
+                                                  {required String amount,
+                                                  required String title}) {
                                                 return Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                                                  padding: const EdgeInsets
+                                                          .symmetric(
+                                                      horizontal: 5,
+                                                      vertical: 5),
                                                   child: MaterialButton(
                                                     onPressed: () {
                                                       setState(() {
-                                                        amountCash.text = amount;
+                                                        amountCash.text =
+                                                            amount;
                                                       });
                                                     },
                                                     color: Colors.black,
                                                     height: 45,
-                                                    shape: RoundedRectangleBorder(
-                                                      borderRadius: BorderRadius.circular(8),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
                                                     ),
-                                                    padding: const EdgeInsets.only(
+                                                    padding:
+                                                        const EdgeInsets.only(
                                                       left: 25,
                                                       right: 25,
                                                       bottom: 4,
@@ -1148,8 +1190,12 @@ class Message extends StatelessWidget {
                                               }
 
                                               List<Widget> items = [
-                                                amount(amount: "50000", title: "50k"),
-                                                amount(amount: "100000", title: "100k"),
+                                                amount(
+                                                    amount: "50000",
+                                                    title: "50k"),
+                                                amount(
+                                                    amount: "100000",
+                                                    title: "100k"),
                                                 Expanded(
                                                   child: TextField(
                                                     cursorColor: Colors.black,
@@ -1160,14 +1206,19 @@ class Message extends StatelessWidget {
                                                            */
                                                     ],
                                                     decoration: InputDecoration(
-                                                      contentPadding: const EdgeInsets.all(0.0),
+                                                      contentPadding:
+                                                          const EdgeInsets.all(
+                                                              0.0),
                                                       hintText: '12',
-                                                      labelStyle: const TextStyle(
+                                                      labelStyle:
+                                                          const TextStyle(
                                                         color: Colors.black,
                                                         fontSize: 14.0,
-                                                        fontWeight: FontWeight.w400,
+                                                        fontWeight:
+                                                            FontWeight.w400,
                                                       ),
-                                                      hintStyle: const TextStyle(
+                                                      hintStyle:
+                                                          const TextStyle(
                                                         color: Colors.grey,
                                                         fontSize: 14.0,
                                                       ),
@@ -1176,66 +1227,98 @@ class Message extends StatelessWidget {
                                                         color: Colors.black,
                                                         size: 18,
                                                       ),
-                                                      enabledBorder: OutlineInputBorder(
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
                                                         borderSide: BorderSide(
-                                                          color: Colors.grey.shade200,
+                                                          color: Colors
+                                                              .grey.shade200,
                                                           width: 2,
                                                         ),
-                                                        borderRadius: BorderRadius.circular(10.0),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
                                                       ),
-                                                      floatingLabelStyle: const TextStyle(
+                                                      floatingLabelStyle:
+                                                          const TextStyle(
                                                         color: Colors.black,
                                                         fontSize: 18.0,
                                                       ),
-                                                      focusedBorder: OutlineInputBorder(
-                                                        borderSide: const BorderSide(
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
                                                           color: Colors.black,
                                                           width: 1.5,
                                                         ),
-                                                        borderRadius: BorderRadius.circular(15.0),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(15.0),
                                                       ),
                                                     ),
                                                   ),
                                                 )
                                               ];
-                                              return Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: items);
+                                              return Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: items);
                                             }),
                                             const SizedBox(
                                               height: 15,
                                             ),
-                                            Builder(builder: (BuildContext ctx) {
+                                            Builder(
+                                                builder: (BuildContext ctx) {
                                               List<Widget> items = [
                                                 Padding(
-                                                  padding: const EdgeInsets.all(5),
+                                                  padding:
+                                                      const EdgeInsets.all(5),
                                                   child: TextButton(
                                                     onPressed: () {},
                                                     child: const Text(
                                                       "Just Download",
                                                       style: TextStyle(
-                                                        color: Color.fromARGB(255, 54, 54, 54),
+                                                        color: Color.fromARGB(
+                                                            255, 54, 54, 54),
                                                         fontSize: 17.0,
-                                                        fontWeight: FontWeight.w800,
+                                                        fontWeight:
+                                                            FontWeight.w800,
                                                       ),
                                                     ),
                                                   ),
                                                 ),
                                                 Flexible(
                                                     child: Padding(
-                                                  padding: const EdgeInsets.all(5),
+                                                  padding:
+                                                      const EdgeInsets.all(5),
                                                   child: MaterialButton(
                                                     onPressed: () async {
-                                                      if (RegExp(r"^[0-9]+$", caseSensitive: false).hasMatch(amountCash.text) && int.parse(amountCash.text) > 0) {
+                                                      if (RegExp(r"^[0-9]+$",
+                                                                  caseSensitive:
+                                                                      false)
+                                                              .hasMatch(
+                                                                  amountCash
+                                                                      .text) &&
+                                                          int.parse(amountCash
+                                                                  .text) >
+                                                              0) {
                                                         setState(() {
-                                                          typePageDownload = "form";
+                                                          typePageDownload =
+                                                              "form";
                                                         });
                                                       }
                                                     },
                                                     color: Colors.black,
                                                     height: 45,
-                                                    shape: RoundedRectangleBorder(
-                                                      borderRadius: BorderRadius.circular(8),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
                                                     ),
-                                                    padding: const EdgeInsets.only(
+                                                    padding:
+                                                        const EdgeInsets.only(
                                                       left: 25,
                                                       right: 25,
                                                       bottom: 4,
@@ -1247,13 +1330,19 @@ class Message extends StatelessWidget {
                                                           fontSize: 16,
                                                           color: Colors.white,
                                                         ),
-                                                        overflow: TextOverflow.ellipsis,
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
                                                       ),
                                                     ),
                                                   ),
                                                 )),
                                               ];
-                                              return Row(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.center, children: items);
+                                              return Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: items);
                                             }),
                                           ];
 
@@ -1264,7 +1353,13 @@ class Message extends StatelessWidget {
                                               )
                                             ];
                                           }
-                                          return Column(mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: mainPage);
+                                          return Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: mainPage);
                                         },
                                       ),
                                     );
@@ -1292,7 +1387,8 @@ class Message extends StatelessWidget {
     required BuildContext context,
   }) {
     RegExp emailPattern = RegExp(r"\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b");
-    RegExp urlPattern = RegExp(r"((http(s)?)://)?[a-zA-Z\d@:._+~#=-]{1,256}\.[a-z\d]{2,18}\b([-a-zA-Z\d!@:_+.~#?&/=%,$]*)(?<![$])");
+    RegExp urlPattern = RegExp(
+        r"((http(s)?)://)?[a-zA-Z\d@:._+~#=-]{1,256}\.[a-z\d]{2,18}\b([-a-zA-Z\d!@:_+.~#?&/=%,$]*)(?<![$])");
     RegExp emoPattern = RegExp(r"\[(.*?)\]");
     RegExp commandPattern = RegExp(r"\/([a-z0-9]+)");
     RegExp usernamePattern = RegExp(r"@([a-z0-9]+)");
@@ -1670,7 +1766,8 @@ class InlineKeyboardButton extends StatelessWidget {
       primary: false,
       itemCount: inLinKeyboardDatas.length,
       itemBuilder: (BuildContext context, int index) {
-        List<InLinKeyboardData> inLinKeyboardRowDatas = inLinKeyboardDatas[index];
+        List<InLinKeyboardData> inLinKeyboardRowDatas =
+            inLinKeyboardDatas[index];
         late List<Widget> rows = [];
         for (var i = 0; i < inLinKeyboardRowDatas.length; i++) {
           InLinKeyboardData inLinKeyboardData = inLinKeyboardRowDatas[i];
@@ -1698,7 +1795,8 @@ class InlineKeyboardButton extends StatelessWidget {
                   visible: (index != 0),
                   replacement: Center(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 5),
                       child: Text(
                         inLinKeyboardData.title,
                         style: const TextStyle(color: Colors.white),
@@ -1714,7 +1812,8 @@ class InlineKeyboardButton extends StatelessWidget {
                       Flexible(
                         child: Center(
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 5),
                             child: Text(
                               inLinKeyboardData.title,
                               style: const TextStyle(color: Colors.white),

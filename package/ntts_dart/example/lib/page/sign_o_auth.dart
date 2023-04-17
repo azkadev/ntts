@@ -91,7 +91,7 @@ class _SignOAuthState extends State<SignOAuth> {
   }
 
   Future<void> reset() async {
-    setState(() { 
+    setState(() {
       is_loading = false;
       is_error = false;
       loading_text = "";
@@ -113,7 +113,9 @@ class _SignOAuthState extends State<SignOAuth> {
                 minHeight: 0,
                 minWidth: 0,
               ),
-              decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(10))),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
               padding: const EdgeInsets.all(10),
               child: LayoutBuilder(
                 builder: (BuildContext context, BoxConstraints constraints) {
@@ -132,7 +134,6 @@ class _SignOAuthState extends State<SignOAuth> {
                               style: context.titleSmall,
                             ),
                           ),
-
                           Align(
                             alignment: Alignment.topRight,
                             child: MaterialButton(
@@ -144,7 +145,7 @@ class _SignOAuthState extends State<SignOAuth> {
                               minWidth: 0,
                               child: const Icon(Icons.close),
                             ),
-                          ), 
+                          ),
                         ],
                       ),
                       const SizedBox(
@@ -154,7 +155,8 @@ class _SignOAuthState extends State<SignOAuth> {
                         child: Padding(
                           padding: EdgeInsets.all(10),
                           child: Text(
-                            widget.languageApp.sign_with_msg_error_not_found_app_or_server(),
+                            widget.languageApp
+                                .sign_with_msg_error_not_found_app_or_server(),
                             style: context.titleSmall,
                             overflow: TextOverflow.clip,
                           ),
@@ -171,7 +173,8 @@ class _SignOAuthState extends State<SignOAuth> {
                             height: 25.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30.0),
-                              border: Border.all(width: 1.0, color: Colors.green),
+                              border:
+                                  Border.all(width: 1.0, color: Colors.green),
                             ),
                             clipBehavior: Clip.antiAlias,
                             child: MaterialButton(
@@ -191,7 +194,8 @@ class _SignOAuthState extends State<SignOAuth> {
                             height: 25.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30.0),
-                              border: Border.all(width: 1.0, color: Colors.green),
+                              border:
+                                  Border.all(width: 1.0, color: Colors.green),
                             ),
                             clipBehavior: Clip.antiAlias,
                             child: MaterialButton(
@@ -199,7 +203,8 @@ class _SignOAuthState extends State<SignOAuth> {
                                 if (dart.isWeb) {
                                   await launchUrl(
                                     Uri.parse("http://localhost:9000"),
-                                    webViewConfiguration: const WebViewConfiguration(headers: {
+                                    webViewConfiguration:
+                                        const WebViewConfiguration(headers: {
                                       "client_app_unique_id": "sa",
                                     }),
                                   );
@@ -208,14 +213,16 @@ class _SignOAuthState extends State<SignOAuth> {
                                     await launchUrl(
                                       Uri.parse("http://localhost:9000"),
                                       mode: LaunchMode.inAppWebView,
-                                      webViewConfiguration: const WebViewConfiguration(headers: {
+                                      webViewConfiguration:
+                                          const WebViewConfiguration(headers: {
                                         "client_app_unique_id": "sa",
                                       }),
                                     );
                                   } catch (e) {
                                     await launchUrl(
                                       Uri.parse("http://localhost:9000"),
-                                      webViewConfiguration: const WebViewConfiguration(headers: {
+                                      webViewConfiguration:
+                                          const WebViewConfiguration(headers: {
                                         "client_app_unique_id": "sa",
                                       }),
                                     );
@@ -223,7 +230,8 @@ class _SignOAuthState extends State<SignOAuth> {
                                 } else {
                                   await launchUrl(
                                     Uri.parse("http://localhost:9000"),
-                                    webViewConfiguration: const WebViewConfiguration(headers: {
+                                    webViewConfiguration:
+                                        const WebViewConfiguration(headers: {
                                       "client_app_unique_id": "sa",
                                     }),
                                   );
@@ -260,7 +268,9 @@ class _SignOAuthState extends State<SignOAuth> {
                 maxHeight: 100,
                 maxWidth: 100,
               ),
-              decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(20))),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(20))),
               padding: const EdgeInsets.all(10),
               child: const CircularProgressIndicator(),
             ),
@@ -278,7 +288,9 @@ class _SignOAuthState extends State<SignOAuth> {
               minHeight: 0,
               minWidth: 0,
             ),
-            decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(10))),
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(10))),
             padding: const EdgeInsets.all(10),
             child: Text(
               loading_text,

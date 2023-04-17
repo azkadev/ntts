@@ -38,7 +38,9 @@ class Ntts {
     String? pathLib,
   }) {
     Pointer<Utf8> data_native = json.encode(data).toNativeUtf8();
-    Pointer<Utf8> request_result = library(pathLib: pathLib).lookupFunction<RequestNative, RequestDart>("request").call(data_native);
+    Pointer<Utf8> request_result = library(pathLib: pathLib)
+        .lookupFunction<RequestNative, RequestDart>("request")
+        .call(data_native);
     malloc.free(data_native);
     Map result = (json.decode(request_result.toDartString()) as Map);
     malloc.free(request_result);

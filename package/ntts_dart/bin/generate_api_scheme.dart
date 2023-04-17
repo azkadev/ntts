@@ -14,9 +14,10 @@ void main(List<String> args) async {
       "speaker_id": 10,
     },
     {
-      "@type": "getVersion", 
+      "@type": "getVersion",
     },
   ];
 
-  jsonToScripts(scripts, directory: Directory(path.join(Directory.current.path, "lib", "api")));
+  jsonToScripts(scripts,
+      directory: Directory(path.join(Directory.current.path, "lib", "api")));
 }

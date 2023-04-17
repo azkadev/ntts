@@ -19,7 +19,8 @@ class _HomePageState extends State<HomePage> {
   int active_index_bottom_bar = 0;
   PageController pageController = PageController();
 
-  List<ScrollController> scrollControllers = List.generate(4, (index) => ScrollController()).toList();
+  List<ScrollController> scrollControllers =
+      List.generate(4, (index) => ScrollController()).toList();
   @override
   void initState() {
     super.initState();
@@ -56,7 +57,8 @@ class _HomePageState extends State<HomePage> {
         itemCount: 4,
         itemBuilder: (context, index) {
           return SingleChildScrollView(
-            physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+            physics:
+                AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
             child: ConstrainedBox(
               // width: context.width,
               // height: context.height,
@@ -67,7 +69,8 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   SingleChildScrollView(
-                    physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                    physics: AlwaysScrollableScrollPhysics(
+                        parent: BouncingScrollPhysics()),
                     scrollDirection: Axis.horizontal,
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
@@ -81,7 +84,8 @@ class _HomePageState extends State<HomePage> {
                             width: 150,
                             margin: EdgeInsets.all(5),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                               image: DecorationImage(
                                 fit: BoxFit.fill,
                                 image: ImageFlutter.auto(
@@ -95,17 +99,19 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () async {
                                 if (!context.mounted) {
                                   return;
-                                } 
+                                }
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                                    backgroundColor:
+                                        Color.fromARGB(0, 255, 255, 255),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15.0),
                                     ),
                                     elevation: 0,
                                     content: Column(
                                       mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Container(
                                           alignment: Alignment.centerLeft,
@@ -113,19 +119,24 @@ class _HomePageState extends State<HomePage> {
                                           width: 150,
                                           decoration: BoxDecoration(
                                             color: Colors.white,
-                                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10)),
                                             boxShadow: [
                                               BoxShadow(
-                                                color: Color.fromARGB(49, 0, 0, 0),
+                                                color:
+                                                    Color.fromARGB(49, 0, 0, 0),
                                                 spreadRadius: 1,
                                                 blurRadius: 2,
-                                                offset: Offset(0, -0.5), // changes position of shadow
+                                                offset: Offset(0,
+                                                    -0.5), // changes position of shadow
                                               ),
                                               BoxShadow(
-                                                color: Color.fromARGB(49, 0, 0, 0),
+                                                color:
+                                                    Color.fromARGB(49, 0, 0, 0),
                                                 spreadRadius: 1,
                                                 blurRadius: 2,
-                                                offset: Offset(0, 0.5), // changes position of shadow
+                                                offset: Offset(0,
+                                                    0.5), // changes position of shadow
                                               ),
                                             ],
                                           ),
@@ -171,13 +182,15 @@ class _HomePageState extends State<HomePage> {
                             color: Color.fromARGB(49, 0, 0, 0),
                             spreadRadius: 1,
                             blurRadius: 2,
-                            offset: Offset(0, -0.5), // changes position of shadow
+                            offset:
+                                Offset(0, -0.5), // changes position of shadow
                           ),
                           BoxShadow(
                             color: Color.fromARGB(49, 0, 0, 0),
                             spreadRadius: 1,
                             blurRadius: 2,
-                            offset: Offset(0, 0.5), // changes position of shadow
+                            offset:
+                                Offset(0, 0.5), // changes position of shadow
                           ),
                         ],
                       ),
@@ -205,7 +218,8 @@ class _HomePageState extends State<HomePage> {
                                     maxHeight: context.height * .5,
                                   ),
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
                                     image: DecorationImage(
                                       image: ImageFlutter.auto(
                                         image: "assets/user/girl_2.jpg",
@@ -221,7 +235,8 @@ class _HomePageState extends State<HomePage> {
                     );
                   }).toList(),
                   SizedBox(
-                    height: kBottomNavigationBarHeight + kFloatingActionButtonMargin,
+                    height: kBottomNavigationBarHeight +
+                        kFloatingActionButtonMargin,
                   )
                 ],
               ),

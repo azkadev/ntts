@@ -128,5 +128,4 @@ class NttsRequest {
   String toString() {
     return json.encode(rawData);
   }
-
 }

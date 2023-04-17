@@ -2,21 +2,16 @@
 import "json_dart.dart";
 // import "dart:convert";
 
-
-
 class GetVersion extends JsonDart {
-
-  
   GetVersion(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"getVersion"};
+    return {"@type": "getVersion"};
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -25,21 +20,13 @@ class GetVersion extends JsonDart {
     }
   }
 
-
-  
   static GetVersion create({
-
     String? special_type,
-})  {
+  }) {
     GetVersion getVersion = GetVersion({
-  
       "@type": special_type,
+    });
 
-
-  });
-
-
-return getVersion;
-
-      }
+    return getVersion;
+  }
 }

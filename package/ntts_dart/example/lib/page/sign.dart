@@ -6,7 +6,7 @@ import "package:example/language/language.dart";
 import "package:example/page/page.dart";
 import "package:cool_alert/cool_alert.dart";
 import 'package:flutter/material.dart';
- 
+
 import "package:galaxeus_lib_flutter/galaxeus_lib_flutter.dart";
 import "package:pinput/pinput.dart";
 
@@ -143,7 +143,9 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
                 margin: const EdgeInsets.all(20),
                 borderRadius: const BorderRadius.all(Radius.circular(20)),
                 onPressed: () async {
-                  ValidationData validationData = validation(data: textEditingController.text, validationDataType: ValidationDataType.password);
+                  ValidationData validationData = validation(
+                      data: textEditingController.text,
+                      validationDataType: ValidationDataType.password);
                   if (validationData.message != null) {
                     //
                     await CoolAlert.show(
@@ -237,7 +239,9 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
                 margin: const EdgeInsets.all(20),
                 borderRadius: const BorderRadius.all(Radius.circular(20)),
                 onPressed: () async {
-                  ValidationData validationData = validation(data: textEditingController.text, validationDataType: ValidationDataType.code);
+                  ValidationData validationData = validation(
+                      data: textEditingController.text,
+                      validationDataType: ValidationDataType.code);
                   if (validationData.message != null) {
                     //
                     await CoolAlert.show(
@@ -349,7 +353,10 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
     final defaultPinTheme = PinTheme(
       width: 56,
       height: 56,
-      textStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
+      textStyle: TextStyle(
+          fontSize: 20,
+          color: Color.fromRGBO(30, 60, 87, 1),
+          fontWeight: FontWeight.w600),
       decoration: BoxDecoration(
         border: Border.all(color: Color.fromRGBO(153, 153, 153, 1)),
         borderRadius: BorderRadius.circular(20),
@@ -529,7 +536,8 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
                               return Padding(
                                 padding: EdgeInsets.all(20),
                                 child: SignOAuth(
-                                  languageApp: LanguageApp(languageCodeType: LanguageCodeType.id),
+                                  languageApp: LanguageApp(
+                                      languageCodeType: LanguageCodeType.id),
                                   signOAuthType: SignOAuthType.google,
                                 ),
                               );
@@ -563,7 +571,8 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
                               return Padding(
                                 padding: EdgeInsets.all(20),
                                 child: SignOAuth(
-                                  languageApp: LanguageApp(languageCodeType: LanguageCodeType.id),
+                                  languageApp: LanguageApp(
+                                      languageCodeType: LanguageCodeType.id),
                                   signOAuthType: SignOAuthType.meesagee,
                                 ),
                               );
@@ -597,7 +606,8 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
                               return Padding(
                                 padding: EdgeInsets.all(20),
                                 child: SignOAuth(
-                                  languageApp: LanguageApp(languageCodeType: LanguageCodeType.id),
+                                  languageApp: LanguageApp(
+                                      languageCodeType: LanguageCodeType.id),
                                   signOAuthType: SignOAuthType.telegram,
                                 ),
                               );
@@ -631,7 +641,8 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
                               return Padding(
                                 padding: EdgeInsets.all(20),
                                 child: SignOAuth(
-                                  languageApp: LanguageApp(languageCodeType: LanguageCodeType.id),
+                                  languageApp: LanguageApp(
+                                      languageCodeType: LanguageCodeType.id),
                                   signOAuthType: SignOAuthType.twitter,
                                 ),
                               );
@@ -665,7 +676,8 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
                               return Padding(
                                 padding: EdgeInsets.all(20),
                                 child: SignOAuth(
-                                  languageApp: LanguageApp(languageCodeType: LanguageCodeType.id),
+                                  languageApp: LanguageApp(
+                                      languageCodeType: LanguageCodeType.id),
                                   signOAuthType: SignOAuthType.whatsapp,
                                 ),
                               );
@@ -762,9 +774,13 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
               Radius.circular(20),
             ),
             onPressed: () async {
-              ValidationData validationDataPassword = validation(data: keyEditingController.text, validationDataType: ValidationDataType.password);
+              ValidationData validationDataPassword = validation(
+                  data: keyEditingController.text,
+                  validationDataType: ValidationDataType.password);
 
-              ValidationData validationData = validation(data: textEditingController.text, validationDataType: ValidationDataType.username);
+              ValidationData validationData = validation(
+                  data: textEditingController.text,
+                  validationDataType: ValidationDataType.username);
 
               if (validationData.message != null) {
                 //
@@ -875,9 +891,13 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
               ),
             ),
             onPressed: () async {
-              ValidationData validationDataPassword = validation(data: keyEditingController.text, validationDataType: ValidationDataType.password);
+              ValidationData validationDataPassword = validation(
+                  data: keyEditingController.text,
+                  validationDataType: ValidationDataType.password);
 
-              ValidationData validationData = validation(data: textEditingController.text, validationDataType: ValidationDataType.username);
+              ValidationData validationData = validation(
+                  data: textEditingController.text,
+                  validationDataType: ValidationDataType.username);
               if (validationData.message != null) {
                 //
                 await CoolAlert.show(
@@ -923,9 +943,13 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
               ),
             ),
             onPressed: () async {
-              ValidationData validationDataPassword = validation(data: keyEditingController.text, validationDataType: ValidationDataType.password);
+              ValidationData validationDataPassword = validation(
+                  data: keyEditingController.text,
+                  validationDataType: ValidationDataType.password);
 
-              ValidationData validationData = validation(data: textEditingController.text, validationDataType: ValidationDataType.username);
+              ValidationData validationData = validation(
+                  data: textEditingController.text,
+                  validationDataType: ValidationDataType.username);
 
               if (validationData.message != null) {
                 //
@@ -965,7 +989,8 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
         controller: textEditingController,
         readOnly: readOnly,
         validator: (String? data) {
-          ValidationData validationData = validation(data: data, validationDataType: ValidationDataType.username);
+          ValidationData validationData = validation(
+              data: data, validationDataType: ValidationDataType.username);
           return validationData.message;
         },
       ),
@@ -1001,7 +1026,8 @@ class _SignPageState extends State<SignPage> with TickerProviderStateMixin {
         controller: keyEditingController,
         readOnly: readOnly,
         validator: (String? data) {
-          ValidationData validationData = validation(data: data, validationDataType: ValidationDataType.password);
+          ValidationData validationData = validation(
+              data: data, validationDataType: ValidationDataType.password);
           return validationData.message;
         },
         onPressed: () {

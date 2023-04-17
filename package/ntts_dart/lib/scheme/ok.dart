@@ -2,21 +2,16 @@
 import "json_dart.dart";
 // import "dart:convert";
 
-
-
 class Ok extends JsonDart {
-
-  
   Ok(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"ok"};
+    return {"@type": "ok"};
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -25,21 +20,13 @@ class Ok extends JsonDart {
     }
   }
 
-
-  
   static Ok create({
-
     String? special_type,
-})  {
+  }) {
     Ok ok = Ok({
-  
       "@type": special_type,
+    });
 
-
-  });
-
-
-return ok;
-
-      }
+    return ok;
+  }
 }

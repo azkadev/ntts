@@ -27,7 +27,19 @@ class FloatingBarWidgetContainerData {
   final AlignmentGeometry? transformAlignment;
 
   final Clip clipBehavior;
-  const FloatingBarWidgetContainerData({this.alignment, this.padding, this.color, this.decoration, this.foregroundDecoration, this.width, this.height, this.constraints, this.margin, this.transform, this.transformAlignment, this.clipBehavior = Clip.none});
+  const FloatingBarWidgetContainerData(
+      {this.alignment,
+      this.padding,
+      this.color,
+      this.decoration,
+      this.foregroundDecoration,
+      this.width,
+      this.height,
+      this.constraints,
+      this.margin,
+      this.transform,
+      this.transformAlignment,
+      this.clipBehavior = Clip.none});
 }
 
 class FloatingBarWidget extends StatelessWidget {
@@ -144,7 +156,8 @@ class FloatingBarWidget extends StatelessWidget {
     required BuildContext context,
     required bool canTap,
   }) {
-    FloatingBarWidgetContainerData floatingBarWidgetContainerData = (index == activeIndex) ? activeContainer : inActiveContainer;
+    FloatingBarWidgetContainerData floatingBarWidgetContainerData =
+        (index == activeIndex) ? activeContainer : inActiveContainer;
     return Container(
       key: key,
       alignment: floatingBarWidgetContainerData.alignment,

@@ -1,5 +1,3 @@
-
-
 import 'language_code_type.dart';
 
 class LanguageApp {

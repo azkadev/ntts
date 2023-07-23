@@ -23,6 +23,13 @@ Library ini sudah tidak akftif maintance jika anda butuh bantuan support / anda 
 | 1  | [MODEL TTS ENGLISH](https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-en-us-libritts-high.tar.gz) |
 
 
+### Installation
+```bash
+wget https://github.com/azkadev/ntts/releases/download/latest/ntts_dart.deb
+sudo dpkg --force-all -i ./ntts_dart.deb
+ntts_dart -m "path_model.onnx" -t "Hello World"
+```
+
 ### Development
 
 ```bash

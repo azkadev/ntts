@@ -1,1 +1,5 @@
 *.wav
+*.deb
+
+*.onnx
+*.onnx.json

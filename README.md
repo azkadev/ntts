@@ -12,6 +12,12 @@ https://user-images.githubusercontent.com/82513502/232475337-c02e24fd-52a7-4a4a-
 ---
 
 
+## More Update And More Features?
+
+Indonesia: jika anda ingin saya maintance terus project ini silahkan donate ke saya
+English: if you want me to continue to maintain this project please donate to me
+
+
 ### Information
 
 Library ini sudah tidak akftif maintance jika anda butuh bantuan support / anda ingin melihat library terbaru anda bisa donasi seiklasnya ke akun Telegram [Azkadev](https://t.me/azkadev)

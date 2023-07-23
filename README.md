@@ -18,10 +18,15 @@ Indonesia: jika anda ingin saya maintance terus project ini silahkan [donate ke 
 <br>
 English: if you want me to continue to maintain this project please [donate to me](https://github.com/sponsors/azkadev)
 
+ 
 
-### Information
+### TESTED ON
 
-Library ini sudah tidak akftif maintance jika anda butuh bantuan support / anda ingin melihat library terbaru anda bisa donasi seiklasnya ke akun Telegram [Azkadev](https://t.me/azkadev)
+| NO | OS                  | CPU                 | RAM |
+|----|---------------------|---------------------|-----|
+| 1  | Ubuntu 22.04        | AMD RYZEN 5500U     | 8GB |
+| 2  | Ubuntu Server 22.04 | Intel Celeron n2940 | 4GB |
+
 
 ### Resources
 

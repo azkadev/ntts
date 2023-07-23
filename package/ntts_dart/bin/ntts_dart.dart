@@ -10,26 +10,10 @@ import 'package:ntts_dart/scheme/scheme.dart';
 import 'package:play/play_dart.dart';
 import "package:path/path.dart" as path;
 
-typedef whisper_request_native = Void Function(Int da, Pointer<Pointer<Utf8>> body);
-typedef whisper_request_dart = void Function(int da, Pointer<Pointer<Utf8>> body);
-
-class WhisperArgs {
-  List<String> args;
-  WhisperArgs(this.args);
-  Pointer<Pointer<Utf8>> toNativeList() {
-    List<Pointer<Utf8>> utf8PointerList = args.map((str) => str.toNativeUtf8()).toList();
-    final Pointer<Pointer<Utf8>> pointerPointer = malloc.allocate(utf8PointerList.length);
-    args.asMap().forEach((index, utf) {
-      pointerPointer[index] = utf8PointerList[index];
-    });
-    return pointerPointer;
-  }
-}
-
 void main(List<String> arguments) async {
   Args args = Args(arguments);
   Ntts ntts = Ntts(
-    pathLib: "libntts.so",
+    pathLib: "../../native_lib/build/lib/libntts.so",
   );
   File file = File(args.after("-m") ?? path.join(Directory.current.path, "en_US-libritts-high.onnx"));
   if (!file.existsSync()) {
@@ -87,7 +71,7 @@ Robot: You're welcome. Don't hesitate to contact me if you need further assistan
 """.trim(),
       model_path: file.path,
       output_file: file_ouput.path,
-      speaker_id: 10,
+      speaker_id: int.tryParse(args.after("-s") ?? "0") ?? 10,
     ).toJson(),
   );
 

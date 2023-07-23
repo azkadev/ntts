@@ -27,6 +27,7 @@ set(PIPER_PHONEMIZE_ROOTDIR ${CMAKE_CURRENT_LIST_DIR}/../../lib/${CMAKE_HOST_SYS
 set(ntts_shared_dir "lib")
 set(ntts_exe_dir "bin")
 set(prefix_shared_library "lib")
+set(ntts_share_dir "share")
  
 
 if (ANDROID)
@@ -89,6 +90,32 @@ target_include_directories(ntts_shared PUBLIC
                       #  ${SPDLOG_CFLAGS_OTHER} -fPIC)
 
 target_compile_definitions(ntts_shared PUBLIC _PIPER_VERSION=${ntts_library_version})
+ 
+
+# Get a list of all files in the source directory.
+file(GLOB files "${CMAKE_CURRENT_LIST_DIR}/Linux-x86_64/piper_phonemize/lib/*")
+ 
+foreach(file IN LISTS files)
+
+if(IS_DIRECTORY "${file}") 
+ file(COPY "${file}" DESTINATION "${ntts_share_dir}")
+else()
+ file(COPY "${file}" DESTINATION "${ntts_shared_dir}")
+endif()
+
+# endif() 
+endforeach()
+
+
+
+# Get a list of all files in the source directory.
+file(GLOB files_onnx "${CMAKE_CURRENT_LIST_DIR}/Linux-x86_64/onnxruntime/onnxruntime-linux-x64-1.14.1/lib/*")
+
+# message(STATUS ntts_shared_dir)
+# Copy all files to the destination directory.
+foreach(file IN LISTS files_onnx)
+  file(COPY "${file}" DESTINATION "${ntts_shared_dir}")
+endforeach()
 
 add_custom_command(
   TARGET ntts_shared POST_BUILD 

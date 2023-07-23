@@ -30,6 +30,12 @@ Library ini sudah tidak akftif maintance jika anda butuh bantuan support / anda 
 | 1  | [MODEL TTS ENGLISH](https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-en-us-libritts-high.tar.gz) |
 
 
+### Dependencies
+
+```bash
+sudo apt-get install espeak-ng mpv
+```
+
 ### Installation
 ```bash
 
@@ -54,11 +60,6 @@ git clone https://github.com/azkadev/ntts_dart.git
 cd ntts_dart
 ```
 
-### Dependencies
-
-```bash
-sudo apt-get install espeak-ng
-```
 
 ### Compile Library
 

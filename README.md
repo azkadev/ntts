@@ -44,7 +44,7 @@ wget https://github.com/azkadev/ntts/releases/download/latest/ntts_dart.deb
 sudo dpkg --force-all -i ./ntts_dart.deb
 
 # try ntts
-ntts_dart -m "path_model.onnx" -t "Hello World"
+ntts_dart -m "en_US-libritts-high.onnx" -t "Hello World"
 ```
 
 ### Development

@@ -14,9 +14,9 @@ https://user-images.githubusercontent.com/82513502/232475337-c02e24fd-52a7-4a4a-
 
 ## More Update And More Features?
 
-Indonesia: jika anda ingin saya maintance terus project ini silahkan donate ke saya
+Indonesia: jika anda ingin saya maintance terus project ini silahkan [donate ke saya](https://github.com/sponsors/azkadev)
 <br>
-English: if you want me to continue to maintain this project please donate to me
+English: if you want me to continue to maintain this project please [donate to me](https://github.com/sponsors/azkadev)
 
 
 ### Information

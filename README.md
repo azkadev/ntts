@@ -41,6 +41,17 @@ English: if you want me to continue to maintain this project please [donate to m
 sudo apt-get install espeak-ng mpv
 ```
 
+```bash
+sudo apt-get install gawk bison gcc make -y
+wget -c https://ftp.gnu.org/gnu/glibc/glibc-2.33.tar.gz
+tar -zxvf glibc-2.33.tar.gz && cd glibc-2.33
+mkdir glibc-build && cd glibc-build
+../configure --prefix=/opt/glibc
+make
+sudo make install
+```
+
+
 ### Installation
 ```bash
 

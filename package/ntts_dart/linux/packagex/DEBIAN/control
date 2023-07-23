@@ -1,10 +1,10 @@
 Maintainer: "azkadev <azkadev@noemail.com>"
-Package: package-template-dart
-Version: 1.0.0
+Package: ntts-dart
+Version: 0.0.0
 Section: x11
 Priority: optional
 Architecture: amd64
 Essential: no
 Installed-Size: 0
-Description: "A sample command-line application."
-Homepage: "https://github.com/azkadev"
+Description: "Neural Text To Speech dart cross platform support server side and client side without request internet data and work on cpu."
+Homepage: "https://youtube.com/@azkadev"

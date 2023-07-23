@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
-ln -s /usr/share/package-template-dart/ntts_dart /usr/bin/package-template-dart
-chmod +x /usr/bin/package-template-dart
+ln -s /usr/share/ntts-dart/ntts_dart /usr/bin/ntts-dart
+chmod +x /usr/bin/ntts-dart
 exit 0

@@ -1,8 +1,4 @@
-import 'dart:ffi';
 import 'dart:io';
-import 'dart:isolate';
-
-import 'package:ffi/ffi.dart';
 import 'package:galaxeus_lib/galaxeus_lib.dart';
 import 'package:ntts_dart/api/create_voice.dart';
 import 'package:ntts_dart/ntts_dart.dart';
@@ -13,9 +9,9 @@ import "package:path/path.dart" as path;
 void main(List<String> arguments) async {
   Args args = Args(arguments);
   Ntts ntts = Ntts(
-    pathLib: "../../native_lib/build/lib/libntts.so",
+    pathLib: "libntts.so",
   );
-  File file = File(args.after("-m") ?? path.join(Directory.current.path, "en_US-libritts-high.onnx"));
+  File file = File(path.join(Directory.current.path, "en_US-libritts-high.onnx"));
   if (!file.existsSync()) {
     print("Please add model");
     exit(0);
@@ -27,7 +23,7 @@ void main(List<String> arguments) async {
   }
   var res = ntts.invokeRaw(
     data: CreateVoice.create(
-      text: args.after("-t") ?? """
+      text: """
 This sound is created using dart language by azkadev without using any internet
 
 Human: Good afternoon, robot. How are you today?
@@ -68,7 +64,8 @@ Human: No, that's all for now. Thank you, robot.
 
 Robot: You're welcome. Don't hesitate to contact me if you need further assistance.
 
-""".trim(),
+"""
+          .trim(),
       model_path: file.path,
       output_file: file_ouput.path,
       speaker_id: int.tryParse(args.after("-s") ?? "0") ?? 10,
@@ -95,9 +92,4 @@ Robot: You're welcome. Don't hesitate to contact me if you need further assistan
       exit(0);
     },
   );
-
-  // WhisperArgs whisperArgs = WhisperArgs([
-  //   "m"
-  // ]);
-  // ntts.library().lookupFunction<whisper_request_native, whisper_request_dart>("test").call(whisperArgs.args.length, whisperArgs.toNativeList());
 }

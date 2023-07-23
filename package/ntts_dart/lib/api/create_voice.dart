@@ -83,7 +83,7 @@ class CreateVoice extends JsonDart {
   }
 
   static CreateVoice create({
-    String? special_type,
+    String special_type = "createVoice",
     String? text,
     String? exec_path,
     String? model_path,

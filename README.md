@@ -46,6 +46,7 @@ cmake -DCMAKE_BUILD_TYPE=Release ..
 cmake --build .
 ```
 
+
 ### Install
 
 ```bash
@@ -94,3 +95,8 @@ void main(List<String> arguments) async {
 2. [Mimic Recording Studio](https://github.com/MycroftAI/mimic-recording-studio)
 3. [Espeak](https://github.com/espeak-ng/espeak-ng)
 4. [onnxruntime](https://github.com/microsoft/onnxruntime)
+
+
+
+echo 'Welcome to the world of speech synthesis!' | \
+ /home/galaxeus/Documents/hexaminate/app/ntts/native_lib/build/libntts --model /home/galaxeus/azkadev/piper/local/en-us/lessac/low/en-us-lessac-low.onnx --output_file welcome.wav

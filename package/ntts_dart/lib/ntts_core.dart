@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:ffi';
-import 'dart:io';
+import 'dart:io'; 
 
-import 'package:ffi/ffi.dart';
-import 'package:ntts_dart/ntts_request.dart';
-import 'package:ntts_dart/ntts_response.dart';
+import 'package:ffi/ffi.dart';  
 import 'package:ntts_dart/typedef/request.dart';
+import "package:ntts_dart/api/json_dart.dart" as json_dart_api;
 
+import "package:ntts_dart/scheme/json_dart.dart" as json_dart_respond;
 class Ntts {
   String path_lib = "libntts.so";
   bool is_cli;
@@ -33,14 +33,25 @@ class Ntts {
     }
   }
 
+  Future<void> test({
+    required Map data,
+    String? pathLib,
+  }) async {
+    // Pointer<Utf8> data_native = json.encode(data).toNativeUtf8(); 
+      // void request_result = library(pathLib: pathLib).lookupFunction<Void Function(), void Function()>("test", isLeaf: true).call();
+    
+    // malloc.free(data_native);
+    // Map result = (json.decode(request_result.toDartString()) as Map);
+    // malloc.free(request_result);
+    return;
+  }
+
   Map invokeRaw({
     required Map data,
     String? pathLib,
   }) {
     Pointer<Utf8> data_native = json.encode(data).toNativeUtf8();
-    Pointer<Utf8> request_result = library(pathLib: pathLib)
-        .lookupFunction<RequestNative, RequestDart>("request")
-        .call(data_native);
+    Pointer<Utf8> request_result = library(pathLib: pathLib).lookupFunction<RequestNative, RequestDart>("request").call(data_native);
     malloc.free(data_native);
     Map result = (json.decode(request_result.toDartString()) as Map);
     malloc.free(request_result);
@@ -54,13 +65,13 @@ class Ntts {
     return invokeRaw(data: data, pathLib: pathLib);
   }
 
-  NttsResponse request({
-    required NttsRequest nttsRequest,
+  json_dart_respond.JsonDart request({
+    required json_dart_api.JsonDart data,
     String? pathLib,
   }) {
-    return NttsResponse(
+    return json_dart_respond.JsonDart(
       requestRaw(
-        data: nttsRequest.toJson(),
+        data: data.toJson(),
         pathLib: pathLib,
       ),
     );

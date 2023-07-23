@@ -32,10 +32,18 @@ Library ini sudah tidak akftif maintance jika anda butuh bantuan support / anda 
 
 ### Installation
 ```bash
+
+# download model
 wget https://huggingface.co/rhasspy/piper-voices/blob/v1.0.0/en/en_US/libritts/high/en_US-libritts-high.onnx
 wget https://huggingface.co/rhasspy/piper-voices/blob/v1.0.0/en/en_US/libritts/high/en_US-libritts-high.onnx.json
+
+# download ntts
 wget https://github.com/azkadev/ntts/releases/download/latest/ntts_dart.deb
+
+# install ntts
 sudo dpkg --force-all -i ./ntts_dart.deb
+
+# try ntts
 ntts_dart -m "path_model.onnx" -t "Hello World"
 ```
 

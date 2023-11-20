@@ -56,8 +56,9 @@ sudo make install
 ```bash
 
 # download model
-wget https://huggingface.co/rhasspy/piper-voices/blob/v1.0.0/en/en_US/libritts/high/en_US-libritts-high.onnx
-wget https://huggingface.co/rhasspy/piper-voices/blob/v1.0.0/en/en_US/libritts/high/en_US-libritts-high.onnx.json
+
+wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/libritts/high/en_US-libritts-high.onnx
+wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/libritts/high/en_US-libritts-high.onnx.json
 
 # download ntts
 wget https://github.com/azkadev/ntts/releases/download/latest/ntts_dart.deb

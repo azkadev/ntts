@@ -22,10 +22,10 @@ English: if you want me to continue to maintain this project please [donate to m
 
 ### TESTED ON
 
-| NO | OS                  | CPU                 | RAM |
-|----|---------------------|---------------------|-----|
-| 1  | Ubuntu 22.04        | AMD RYZEN 5500U     | 8GB |
-| 2  | Ubuntu Server 22.04 | Intel Celeron n2940 | 4GB |
+| NO | OS                    | CPU                 | RAM |
+|----|-----------------------|---------------------|-----|
+| 1  | Ubuntu 22.04 &  23.10 | AMD RYZEN 5500U     | 8GB |
+| 2  | Ubuntu Server 22.04   | Intel Celeron n2940 | 4GB |
 
 
 ### Resources

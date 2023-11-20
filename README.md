@@ -101,7 +101,7 @@ dart pub add ntts_dart
 import 'package:ntts_dart/ntts_dart.dart';
 ```
 
-### Full Quickstart
+### Quickstart
 
 Sebelum di run pastikan kamu sudah mengcompile library dan menyiapkan model dahulu
 

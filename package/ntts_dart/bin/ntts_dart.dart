@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:galaxeus_lib/galaxeus_lib.dart';
+import 'package:general_lib/general_lib.dart';
 import 'package:ntts_dart/api/create_voice.dart';
 import 'package:ntts_dart/ntts_dart.dart';
 import 'package:ntts_dart/scheme/scheme.dart';

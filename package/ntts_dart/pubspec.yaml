@@ -9,16 +9,15 @@ environment:
   sdk: '>=2.19.2 <3.0.0'
 
 dependencies:
-  ffi: ^2.0.2
-  galaxeus_lib: ^0.0.77
+  ffi: ^2.0.2 
+  general_lib: ^0.0.1
   path: ^1.8.3
-#   path: ^1.8.0
+  play: ^0.0.40 
 
 dev_dependencies:
   lints: ^2.1.1
   msix: ^3.16.0
   packagex: ^0.0.25
-  play: ^0.0.30
   test: ^1.23.1
 
 dependency_overrides:

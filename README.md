@@ -101,8 +101,38 @@ dart pub add ntts_dart
 import 'package:ntts_dart/ntts_dart.dart';
 ```
 
+### Full Quickstart
 
-### Quickstart
+Sebelum di run pastikan kamu sudah mengcompile library dan menyiapkan model dahulu
+
+```dart
+import 'dart:io';
+import 'dart:isolate';
+import 'package:ntts_dart/ntts_dart.dart';
+
+void main(List<String> arguments) async {
+  var res = await Isolate.run<Map>(() {
+    Ntts ntts = Ntts(
+      pathLib: "libntts.so",
+    );
+
+    var res = ntts.invokeRaw(
+      data: CreateVoice.create(
+        text: "Hello World",
+        model_path: "./path_to_model.onnx",
+        output_file: "./file_output.wav",
+        speaker_id: 0, 
+      ).toJson(),
+    );
+    return res;
+  });
+  print(res);
+  exit(0);
+}
+```
+
+
+### Full Quickstart
 
 Sebelum di run pastikan kamu sudah mengcompile library dan menyiapkan model dahulu
 

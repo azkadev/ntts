@@ -11,6 +11,7 @@ environment:
 dependencies:
   ffi: ^2.0.2 
   general_lib: ^0.0.1
+  mason_logger: ^0.2.10
   path: ^1.8.3
   play: ^0.0.40 
 

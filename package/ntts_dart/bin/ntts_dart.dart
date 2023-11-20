@@ -11,7 +11,7 @@ void main(List<String> arguments) async {
   Ntts ntts = Ntts(
     pathLib: "libntts.so",
   );
-  File file = File(path.join(Directory.current.path, "en_US-libritts-high.onnx"));
+  File file = File(args.after("-m") ?? path.join(Directory.current.path, "en_US-libritts-high.onnx"));
   if (!file.existsSync()) {
     print("Please add model");
     exit(0);
@@ -23,7 +23,7 @@ void main(List<String> arguments) async {
   }
   var res = ntts.invokeRaw(
     data: CreateVoice.create(
-      text: """
+      text: args.after("-t") ??  """
 This sound is created using dart language by azkadev without using any internet
 
 Human: Good afternoon, robot. How are you today?
@@ -68,7 +68,7 @@ Robot: You're welcome. Don't hesitate to contact me if you need further assistan
           .trim(),
       model_path: file.path,
       output_file: file_ouput.path,
-      speaker_id: int.tryParse(args.after("-s") ?? "0") ?? 10,
+      speaker_id: int.tryParse(args.after("-s") ?? "10") ?? 10,
     ).toJson(),
   );
 

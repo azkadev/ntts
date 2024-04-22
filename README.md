@@ -2,6 +2,10 @@
 
 Neural Text To Speech Library untuk menghasilkan suara realistis seperti natural di bahasa dart, neural text to speech ini berjalan tanpa perlu koneksi internet dan hanya membutuhkan cpu saja
 
+## MOVE TO OTHER REPO
+
+[AZKADEV PIPER](https://github.com/azkadev/piper)
+
 ### Demo
 
 [![](https://raw.githubusercontent.com/azkadev/ntts_dart/main/.github/youtube_ntts.jpg)](https://youtu.be/IfOJs7OUH8o)
